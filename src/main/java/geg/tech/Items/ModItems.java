@@ -1,5 +1,5 @@
 package geg.tech.Items;
-import geg.tech.Porkin;
+import geg.tech.porkin;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.core.Registry;
@@ -18,7 +18,7 @@ public class ModItems {
 
     public static Item register(Item item, String id) {
         //This Shit Sucks Ass Bruh.
-        ResourceLocation itemID = ResourceLocation.fromNamespaceAndPath(Porkin.MOD_ID, id);
+        ResourceLocation itemID = ResourceLocation.fromNamespaceAndPath(porkin.MOD_ID, id);
 
         Item registeredItem = Registry.register(BuiltInRegistries.ITEM, itemID, item);
 

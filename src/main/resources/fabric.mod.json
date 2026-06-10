@@ -16,7 +16,8 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"geg.tech.Porkin"
+			"geg.tech.porkin",
+			"geg.tech.Items.PorkModItems"
 		],
 		"client": [
 			"geg.tech.client.PorkinClient"

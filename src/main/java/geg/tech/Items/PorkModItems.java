@@ -1,6 +1,4 @@
 package geg.tech.Items;
-import geg.tech.Items.ModItems;
-import geg.tech.Porkin;
 
 import net.fabricmc.api.ModInitializer;
 
