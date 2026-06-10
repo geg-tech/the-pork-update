@@ -17,6 +17,7 @@ public class ModItems {
     );
 
     public static Item register(Item item, String id) {
+        //This Shit Sucks Ass Bruh.
         ResourceLocation itemID = ResourceLocation.fromNamespaceAndPath(Porkin.MOD_ID, id);
 
         Item registeredItem = Registry.register(BuiltInRegistries.ITEM, itemID, item);
