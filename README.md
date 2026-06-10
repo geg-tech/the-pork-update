@@ -1,4 +1,7 @@
 # porkin
+this is a shitpost minecraft mod based off of some meme i saw a while ago <br/>
+
+made for Hack Club Stardance :D
 
 ## Setup
 
