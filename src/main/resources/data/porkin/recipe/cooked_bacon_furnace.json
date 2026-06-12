@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "experience": 0.2,
+  "cookingtime": 200,
+  "ingredient": {
+    "item": "porkin:raw_bacon"
+  },
+  "result": {
+    "id": "porkin:cooked_bacon"
+  }
+}

@@ -10,6 +10,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Rarity;
 
 
@@ -25,6 +26,7 @@ public class ModItems {
             .nutrition(10)
             .saturationModifier(15)//full breakfast
             .effect(new MobEffectInstance(MobEffects.DIG_SPEED, 60 * 20, 4), 1.0f) //placeholder, make custom effect here
+            .usingConvertsTo(Items.BOWL)
             .build();
     public static final FoodProperties RAWSNACK = new FoodProperties.Builder() //bacon
             .fast()

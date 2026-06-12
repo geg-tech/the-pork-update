@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "oBC",
+    " ) "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:bread"
+    },
+    "o": {
+      "item": "minecraft:egg"
+    },
+    "B": {
+      "item": "minecraft:baked_potato"
+    },
+    "C": {
+      "item": "porkin:cooked_bacon"
+    },
+    ")": {
+      "item": "minecraft:bowl"
+    }
+  },
+  "result": {
+    "id": "porkin:hearty_breakfast"
+  }
+}

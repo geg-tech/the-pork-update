@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smoking",
+  "experience": 0.2,
+  "cookingtime": 100,
+  "ingredient": {
+    "item": "porkin:raw_bacon"
+  },
+  "result": {
+    "id": "porkin:cooked_bacon"
+  }
+}
