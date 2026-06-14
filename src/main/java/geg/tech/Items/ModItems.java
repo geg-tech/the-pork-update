@@ -1,17 +1,17 @@
 package geg.tech.Items;
+import geg.tech.Items.Tool.CleaverMaterial;
 import geg.tech.porkin;
 
+import net.fabricmc.fabric.api.item.v1.FabricItem;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.fabricmc.fabric.mixin.content.registry.AxeItemAccessor;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.*;
 
 
 public class ModItems {
@@ -41,23 +41,38 @@ public class ModItems {
 
     //make ultrapork item (boss drop)
     public static final Item ULTRAPORK = register(
-            new Item(new Item.Properties().food(BUFF_FOOD)),
+            new Item(new Item.Properties()
+                    .food(BUFF_FOOD)),
             "ultrapork"
     );
     //make bacon item
     public static final Item RAW_BACON = register(
-            new Item(new Item.Properties().food(RAWSNACK)),
+            new Item(new Item.Properties()
+                    .food(RAWSNACK)),
             "raw_bacon"
     );
     //make cooked bacon
     public static final Item COOKED_BACON = register(
-            new Item(new Item.Properties().food(COOKEDSNACK)),
+            new Item(new Item.Properties()
+                    .food(COOKEDSNACK)),
             "cooked_bacon"
     );
     //make full breakfast
     public static final Item HEARTY_BREAKFAST = register(
-            new Item(new Item.Properties().food(BREAKFAST).rarity(Rarity.UNCOMMON)), //adding rarity here changes the name color
+            new Item(new Item.Properties()
+                    .food(BREAKFAST)
+                    .stacksTo(1)
+                    .rarity(Rarity.UNCOMMON)), //adding rarity here changes the name color
             "hearty_breakfast"
+    );
+    //make cleaver
+    public static final Item CLEAVER = register(
+            new SwordItem(CleaverMaterial.INSTANCE, new Item.Properties()
+                    .attributes(SwordItem.createAttributes(CleaverMaterial.INSTANCE, 1, -2f))
+                    .craftRemainder(ModItems.CLEAVER) // (head to Items.java for info)
+                    .stacksTo(1) //stack to 1 cleaver only
+            ), //make custom stats above ^ (dagger like stats, enchantability of a sword)
+            "cleaver"
     );
 
     //code to register stuff
@@ -77,6 +92,10 @@ public class ModItems {
                     itemGroup.accept(ModItems.COOKED_BACON);
                     itemGroup.accept(ModItems.RAW_BACON);
                     itemGroup.accept(ModItems.HEARTY_BREAKFAST);
+                });
+        ItemGroupEvents.modifyEntriesEvent((CreativeModeTabs.TOOLS_AND_UTILITIES))
+                .register((itemGroup) -> {
+                    itemGroup.accept(ModItems.CLEAVER);
                 });
 
     }
