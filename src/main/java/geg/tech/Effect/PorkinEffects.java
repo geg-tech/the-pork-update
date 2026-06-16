@@ -14,6 +14,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 public class PorkinEffects implements ModInitializer {
     public static final Holder<MobEffect> FEELFULL;
     public static final Holder<MobEffect> LEGCRAMP;
+    public static final Holder<MobEffect> RAPTURE;
 
     static {
         FEELFULL = Registry.registerForHolder(BuiltInRegistries.MOB_EFFECT, ResourceLocation.fromNamespaceAndPath("porkin", "feel_full"), //register effect
@@ -30,7 +31,11 @@ public class PorkinEffects implements ModInitializer {
                         .addAttributeModifier(Attributes.JUMP_STRENGTH, ResourceLocation.fromNamespaceAndPath("porkin", "leg_cramp"), 2.5F,AttributeModifier.Operation.ADD_VALUE)
                         .addAttributeModifier(Attributes.FALL_DAMAGE_MULTIPLIER, ResourceLocation.fromNamespaceAndPath("porkin", "leg_cramp"), 100F, AttributeModifier.Operation.ADD_VALUE)
         );
-
+        RAPTURE = Registry.registerForHolder(BuiltInRegistries.MOB_EFFECT, ResourceLocation.fromNamespaceAndPath("porkin", "rapture"), //register effect
+                new FeelFullEffect()
+                        .addAttributeModifier(Attributes.MOVEMENT_SPEED, ResourceLocation.fromNamespaceAndPath("porkin", "rapture"), 10F, AttributeModifier.Operation.ADD_VALUE)
+                        .addAttributeModifier(Attributes.GRAVITY, ResourceLocation.fromNamespaceAndPath("porkin", "rapture"), -0.5F, AttributeModifier.Operation.ADD_VALUE)
+        );
     }
 
     @Override

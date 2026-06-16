@@ -9,5 +9,6 @@
   "itemGroup.porkin": "the pork update",
   "effect.porkin.feel_full": "§6Feel Full",
   "effect.porkin.leg_cramp": "§5leg cramp",
+  "effect.porkin.rapture": "§ethe rapture",
   "death.attack.dragonBreath": "%1$s had a leg cramp"
 }
