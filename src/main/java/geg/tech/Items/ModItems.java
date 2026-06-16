@@ -1,17 +1,24 @@
 package geg.tech.Items;
+import geg.tech.Effect.PorkinEffects;
 import geg.tech.Items.Tool.CleaverMaterial;
 import geg.tech.porkin;
 
 import net.fabricmc.fabric.api.item.v1.FabricItem;
+import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.mixin.content.registry.AxeItemAccessor;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
+
+import java.util.List;
+import java.util.function.Consumer;
 
 
 public class ModItems {
@@ -25,7 +32,7 @@ public class ModItems {
     public static final FoodProperties BREAKFAST = new FoodProperties.Builder()
             .nutrition(10)
             .saturationModifier(15)//full breakfast
-            .effect(new MobEffectInstance(MobEffects.DIG_SPEED, 60 * 20, 4), 1.0f) //placeholder, make custom effect here
+            .effect(new MobEffectInstance(PorkinEffects.FEELFULL, 60 * 30, 0), 1.0f) //placeholder, make custom effect here
             .usingConvertsTo(Items.BOWL)
             .build();
     public static final FoodProperties RAWSNACK = new FoodProperties.Builder() //bacon
@@ -62,7 +69,7 @@ public class ModItems {
             new Item(new Item.Properties()
                     .food(BREAKFAST)
                     .stacksTo(1)
-                    .rarity(Rarity.UNCOMMON)), //adding rarity here changes the name color
+                    .rarity(Rarity.UNCOMMON)),
             "hearty_breakfast"
     );
     //make cleaver
@@ -75,6 +82,15 @@ public class ModItems {
             "cleaver"
     );
 
+    //make custom creative tab
+    public static final ResourceKey<CreativeModeTab> PORK_MOD_GROUP_KEY = 
+            ResourceKey.create(BuiltInRegistries.CREATIVE_MODE_TAB.key(), ResourceLocation.fromNamespaceAndPath(porkin.MOD_ID, "item_group"));
+    public static final CreativeModeTab PORK_MOD_GROUP = FabricItemGroup.builder()
+            .icon(() -> new ItemStack(ModItems.RAW_BACON))
+            .title(Component.translatable("itemGroup.porkin"))
+            .build();
+
+
     //code to register stuff
     public static Item register(Item item, String id) {
         //This Shit Sucks Ass Bruh.
@@ -86,15 +102,14 @@ public class ModItems {
     }
     //initialize items and add them to creative tabs
     public static void initialize() {
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.FOOD_AND_DRINKS)
-                .register((itemGroup) -> {
-                    itemGroup.accept(ModItems.ULTRAPORK);
+        //register the custom tab
+        Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, PORK_MOD_GROUP_KEY, PORK_MOD_GROUP);
+
+        ItemGroupEvents.modifyEntriesEvent(PORK_MOD_GROUP_KEY).register((itemGroup) -> {
+                    itemGroup.accept(ModItems.ULTRAPORK); //slap all em items into the group
                     itemGroup.accept(ModItems.COOKED_BACON);
                     itemGroup.accept(ModItems.RAW_BACON);
                     itemGroup.accept(ModItems.HEARTY_BREAKFAST);
-                });
-        ItemGroupEvents.modifyEntriesEvent((CreativeModeTabs.TOOLS_AND_UTILITIES))
-                .register((itemGroup) -> {
                     itemGroup.accept(ModItems.CLEAVER);
                 });
 

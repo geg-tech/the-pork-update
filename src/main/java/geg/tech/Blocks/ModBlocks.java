@@ -41,7 +41,7 @@ public class ModBlocks {
     public static void initialize() {
         //its just a dummy initialize method..! dummy... *pouts*
 
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.FOOD_AND_DRINKS).register((itemGroup) -> {
+        ItemGroupEvents.modifyEntriesEvent(ModItems.PORK_MOD_GROUP_KEY).register((itemGroup) -> {
             itemGroup.accept(ModBlocks.PORK_BLOCK.asItem());
         });
     }

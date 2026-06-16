@@ -4,5 +4,10 @@
   "item.porkin.raw_bacon": "Raw Bacon",
   "item.porkin.hearty_breakfast": "Hearty Breakfast",
   "item.porkin.cleaver": "Cleaver",
-  "block.porkin.pork_block": "Pork Block"
+  "block.porkin.pork_block": "Pork Block",
+  "item.porkin.breakfasttooltip": "yummers",
+  "itemGroup.porkin": "the pork update",
+  "effect.porkin.feel_full": "§6Feel Full",
+  "effect.porkin.leg_cramp": "§5leg cramp",
+  "death.attack.dragonBreath": "%1$s had a leg cramp"
 }

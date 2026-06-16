@@ -18,10 +18,14 @@
 		"main": [
 			"geg.tech.porkin",
 			"geg.tech.Items.PorkModItems",
-			"geg.tech.Blocks.ModBlocksInitialize"
+			"geg.tech.Blocks.ModBlocksInitialize",
+			"geg.tech.Effect.PorkinEffects"
 		],
 		"client": [
 			"geg.tech.client.PorkinClient"
+		],
+		"fabric-datagen": [
+			"geg.tech.client.datagen.DataGenerator"
 		]
 	},
 	"mixins": [
