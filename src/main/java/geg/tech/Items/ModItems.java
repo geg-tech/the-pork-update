@@ -45,6 +45,14 @@ public class ModItems {
             .nutrition(3)
             .saturationModifier(3)
             .build();
+    public static final FoodProperties FATBOTTLE = new FoodProperties.Builder()
+            .nutrition(1)
+            .saturationModifier(2)
+            .effect(new MobEffectInstance(MobEffects.CONFUSION,60*10,2),1.0f)
+            .effect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN,60*10,2),1.0f)
+            .effect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN,60*10,2),1.0f) // i mean ur chuggin straight fat idk what you expected
+            .usingConvertsTo(Items.GLASS_BOTTLE)
+            .build();
 
     //make ultrapork item (boss drop)
     public static final Item ULTRAPORK = register(
@@ -81,6 +89,14 @@ public class ModItems {
             ), //make custom stats above ^ (dagger like stats, enchantability of a sword)
             "cleaver"
     );
+    //make bottle of fat
+    public static final Item BOTTLE_OF_FAT = register(
+            new BottleOfFat(new Item.Properties()
+                    .food(FATBOTTLE)
+                    .stacksTo(1)
+                    .craftRemainder(Items.GLASS_BOTTLE)),
+            "bottle_of_fat"
+    );
 
     //make custom creative tab
     public static final ResourceKey<CreativeModeTab> PORK_MOD_GROUP_KEY = 
@@ -111,6 +127,7 @@ public class ModItems {
                     itemGroup.accept(ModItems.RAW_BACON);
                     itemGroup.accept(ModItems.HEARTY_BREAKFAST);
                     itemGroup.accept(ModItems.CLEAVER);
+                    itemGroup.accept(ModItems.BOTTLE_OF_FAT);
                 });
 
     }

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "u"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:string"
+    },
+    "u": {
+      "item": "porkin:bottle_of_fat"
+    }
+  },
+  "result": {
+    "id": "minecraft:candle"
+  }
+}

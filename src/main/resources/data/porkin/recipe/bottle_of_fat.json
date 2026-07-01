@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "u"
+  ],
+  "key": {
+    "#": {
+      "item": "porkin:raw_bacon"
+    },
+    "u": {
+      "item": "minecraft:glass_bottle"
+    }
+  },
+  "result": {
+    "id": "porkin:bottle_of_fat",
+    "count": 1
+  }
+}
