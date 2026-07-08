@@ -1,3 +1,4 @@
+/*
 package geg.tech.Effect;
 
 import net.fabricmc.api.ModInitializer;
@@ -44,6 +45,6 @@ public class PorkinEffects implements ModInitializer {
     }
 }
 
-/*
+
 
  */

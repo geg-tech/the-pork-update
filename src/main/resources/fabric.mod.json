@@ -3,7 +3,7 @@
 	"id": "porkin",
 	"version": "${version}",
 	"name": "porkin",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "porkin",
 	"authors": [
 		"Me!"
 	],
@@ -17,9 +17,7 @@
 	"entrypoints": {
 		"main": [
 			"geg.tech.porkin",
-			"geg.tech.Items.PorkModItems",
-			"geg.tech.Blocks.ModBlocksInitialize",
-			"geg.tech.Effect.PorkinEffects"
+			"geg.tech.Items.PorkModItems"
 		],
 		"client": [
 			"geg.tech.client.PorkinClient"
@@ -37,7 +35,7 @@
 	],
 	"depends": {
 		"fabricloader": ">=0.19.3",
-		"minecraft": "~1.21.1",
+		"minecraft": "~1.21.11",
 		"java": ">=21",
 		"fabric-api": "*"
 	}

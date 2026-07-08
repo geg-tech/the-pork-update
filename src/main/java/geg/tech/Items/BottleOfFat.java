@@ -1,3 +1,4 @@
+/*
 package geg.tech.Items;
 
 import net.minecraft.sounds.SoundEvent;
@@ -33,3 +34,4 @@ public class BottleOfFat extends Item {
         return UseAnim.DRINK; //glug glug glug ur not eating it silly
     }
 }
+*/

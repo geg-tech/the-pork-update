@@ -1,3 +1,4 @@
+/*
 package geg.tech.Effect;
 
 import net.minecraft.world.effect.MobEffect;
@@ -28,3 +29,4 @@ public class LegCrampEffect extends MobEffect {
     }
 
 }
+*/

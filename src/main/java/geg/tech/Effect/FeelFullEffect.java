@@ -1,3 +1,4 @@
+
 package geg.tech.Effect;
 
 import net.minecraft.world.effect.MobEffect;
@@ -6,7 +7,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-
+/*
 public class FeelFullEffect extends MobEffect {
     protected FeelFullEffect() {
         super(MobEffectCategory.BENEFICIAL, 0xffe599);
@@ -33,10 +34,11 @@ public class FeelFullEffect extends MobEffect {
 
             */
             //add stuff here later if you wanna
-        }
+        //}
         //this basically got replaced in PorkinEffects.java, left here as a reference/template for later use
 
-        return super.applyEffectTick(entity, amplifier);
-    }
+        //return super.applyEffectTick(entity, amplifier);
+    //}
 
-}
+//}
+
