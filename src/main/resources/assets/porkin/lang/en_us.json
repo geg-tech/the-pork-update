@@ -4,12 +4,18 @@
   "item.porkin.raw_bacon": "Raw Bacon",
   "item.porkin.hearty_breakfast": "Hearty Breakfast",
   "item.porkin.cleaver": "Cleaver",
-  "item.porkin.bottle_of_fat": "Bottle of Fat",
+  "item.porkin.fat_bottle": "Bottle of Fat",
+
   "block.porkin.pork_block": "Pork Block",
-  "item.porkin.breakfasttooltip": "yummers",
+
+  "tooltip.porkin.breakfast": "yummers! this item gives the §6Feelin' Full §8effect",
+  "tooltip.porkin.fatbottle": "please dont drink this.",
+
   "itemGroup.porkin": "the pork update",
+
   "effect.porkin.feel_full": "§6Feelin' Full",
   "effect.porkin.leg_cramp": "§5leg cramp",
   "effect.porkin.rapture": "§ethe rapture",
+
   "death.attack.dragonBreath": "%1$s had a leg cramp"
 }

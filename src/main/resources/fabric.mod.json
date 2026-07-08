@@ -5,7 +5,7 @@
 	"name": "porkin",
 	"description": "porkin",
 	"authors": [
-		"Me!"
+		"egg_splats on slack!"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
@@ -17,7 +17,8 @@
 	"entrypoints": {
 		"main": [
 			"geg.tech.porkin",
-			"geg.tech.Items.PorkModItems"
+			"geg.tech.Items.ModItemsInitialize",
+			"geg.tech.component.ComponentsInitialize"
 		],
 		"client": [
 			"geg.tech.client.PorkinClient"

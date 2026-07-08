@@ -1,37 +1,24 @@
-/*
 package geg.tech.Items;
 
-import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.UseAnim;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.component.TooltipDisplay;
+
+import java.util.function.Consumer;
 
 public class BottleOfFat extends Item {
-    private static final int DRINK_DURATION = 80; //glug glug glug chug that shi
-
     public BottleOfFat(Properties properties) {
         super(properties);
     }
 
     @Override
-    public int getUseDuration(ItemStack itemStack, LivingEntity livingEntity) {
-        return 80; //thicc and viscous
-    }
-
-    //override the sounds/animations to fit the item
-    @Override
-    public SoundEvent getDrinkingSound() {
-        return SoundEvents.HONEY_DRINK; //yeah i kinda took this from the honey bottle item code
-    }
-    @Override
-    public SoundEvent getEatingSound() {
-        return SoundEvents.HONEY_DRINK; //ew god i hate this sound
-    }
-    @Override
-    public UseAnim getUseAnimation(ItemStack itemStack) {
-        return UseAnim.DRINK; //glug glug glug ur not eating it silly
+    public void appendHoverText(ItemStack itemStack, TooltipContext tooltipContext, TooltipDisplay tooltipDisplay, Consumer<Component> builder, TooltipFlag tooltipFlag) {
+        builder.accept(Component.translatable("tooltip.porkin.fatbottle").withStyle(ChatFormatting.DARK_GRAY));
+        //add tooltips
+        super.appendHoverText(itemStack, tooltipContext, tooltipDisplay, builder, tooltipFlag);
     }
 }
-*/
+

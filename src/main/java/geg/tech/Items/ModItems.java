@@ -117,7 +117,7 @@ public class ModItems {
     );
     //make breakfast item
     public static final Item HEARTY_BREAKFAST = register(
-            "hearty_breakfast", Item::new,
+            "hearty_breakfast", HeartyBreakfast::new,
             new Item.Properties()
                     .food(BREAKFAST_COMPONENT,BREAKFAST_CONSUMABLE_COMPONENT)
                     .stacksTo(1)
@@ -126,7 +126,7 @@ public class ModItems {
     );
     //make bottle of fat item
     public static final Item FAT_BOTTLE = register(
-            "fat_bottle", Item::new,
+            "fat_bottle", BottleOfFat::new,
             new Item.Properties()
                     .food(FAT_BOTTLE_COMPONENT,FAT_BOTTLE_CONSUMABLE_COMPONENT)
                     .stacksTo(1)
