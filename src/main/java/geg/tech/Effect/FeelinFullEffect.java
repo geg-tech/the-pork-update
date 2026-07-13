@@ -2,14 +2,13 @@
 package geg.tech.Effect;
 
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
 
-public class LegCrampEffect extends MobEffect {
-    protected LegCrampEffect() {
-        super(MobEffectCategory.HARMFUL, 0x5e0c28);
+public class FeelinFullEffect extends MobEffect {
+    protected FeelinFullEffect() {
+        super(MobEffectCategory.BENEFICIAL, 0xffe599);
     } //first entry shows its a buff, second is a color (rgb, 0x(color in rgb))
 
     @Override
@@ -19,8 +18,9 @@ public class LegCrampEffect extends MobEffect {
 
     @Override
     public boolean applyEffectTick(ServerLevel level, LivingEntity entity, int amplifier) {
-        entity.hurtServer(level, entity.damageSources().dragonBreath(), 4.0F); //fucking die n whatnot
-
+        if (entity.getHealth() < entity.getMaxHealth()) {
+            entity.heal(1.0F); //heal one hp per tick
+        }
 
         return super.applyEffectTick(level, entity, amplifier);
     }

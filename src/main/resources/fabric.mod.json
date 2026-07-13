@@ -18,7 +18,8 @@
 		"main": [
 			"geg.tech.porkin",
 			"geg.tech.Items.ModItemsInitialize",
-			"geg.tech.component.ComponentsInitialize"
+			"geg.tech.component.ComponentsInitialize",
+			"geg.tech.Effect.PorkinEffects"
 		],
 		"client": [
 			"geg.tech.client.PorkinClient"

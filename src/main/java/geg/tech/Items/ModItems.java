@@ -1,6 +1,7 @@
 package geg.tech.Items;
 // import geg.tech.Effect.PorkinEffects;
 // import geg.tech.Items.Tool.CleaverMaterial;
+import geg.tech.Effect.PorkinEffects;
 import geg.tech.porkin;
 
 import net.fabricmc.fabric.api.item.v1.FabricItem;
@@ -68,8 +69,9 @@ public class ModItems {
     public static final Consumable BREAKFAST_CONSUMABLE_COMPONENT = Consumables.defaultFood()
             // apply effects with ts
             .consumeSeconds(2.0f)
-            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST, 20*60, 0), 1.0f))
+            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(PorkinEffects.FEELIN_FULL, 20*60, 0), 1.0f))
             // ^ placeholder until i port over custom effects
+            // ^ i did it ignore pls
             .build();
     public static final FoodProperties BREAKFAST_COMPONENT = new FoodProperties.Builder()
             .nutrition(10)
