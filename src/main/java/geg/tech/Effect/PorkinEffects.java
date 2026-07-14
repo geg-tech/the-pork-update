@@ -8,6 +8,8 @@ import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectCategory;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 
@@ -32,6 +34,14 @@ public class PorkinEffects implements ModInitializer {
                             .addAttributeModifier(Attributes.SAFE_FALL_DISTANCE, Identifier.withDefaultNamespace("mylegs"), -50.0, AttributeModifier.Operation.ADD_VALUE)
                             .addAttributeModifier(Attributes.JUMP_STRENGTH, Identifier.withDefaultNamespace("comediceffect"), 1.0, AttributeModifier.Operation.ADD_VALUE)
             );
+    //make rapture effect (debuff from geg easter egg item)
+    public static final Holder<MobEffect> RAPTURE =
+            Registry.registerForHolder(BuiltInRegistries.MOB_EFFECT, Identifier.fromNamespaceAndPath(porkin.MOD_ID, "rapture"),
+                    new RaptureEffect()
+                            .addAttributeModifier(Attributes.GRAVITY, Identifier.withDefaultNamespace("byebyebruh"), -0.15, AttributeModifier.Operation.ADD_VALUE)
+                            .addAttributeModifier(Attributes.MOVEMENT_SPEED, Identifier.withDefaultNamespace("fovwow"), 10.0, AttributeModifier.Operation.ADD_VALUE)
+            );
+
 
     @Override
     public void onInitialize() {
