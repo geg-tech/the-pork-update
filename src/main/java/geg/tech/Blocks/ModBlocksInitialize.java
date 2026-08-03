@@ -1,4 +1,3 @@
-/*
 package geg.tech.Blocks;
 import geg.tech.porkin;
 
@@ -8,5 +7,3 @@ public class ModBlocksInitialize extends porkin {
         ModBlocks.initialize();
     }
 }
-
- */
