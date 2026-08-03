@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "porkin:block/pork_block" }
+    "": {
+      "model": "porkin:block/pork_block"
+    }
   }
 }

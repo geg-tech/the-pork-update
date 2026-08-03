@@ -2,6 +2,11 @@ package geg.tech;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.minecraft.IdentifierException;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.Identifier;
+import net.minecraft.sounds.SoundEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,6 +25,10 @@ public class porkin implements ModInitializer {
 		// Proceed with mild caution.
 
 		//initialize items
+			//make a custom sound event (for the bottle of fat item)
+			//^ deprecated, moved to CustomSounds in the sound directory
+		//Registry.register(BuiltInRegistries.SOUND_EVENT, Identifier.fromNamespaceAndPath(porkin.MOD_ID, "burp"),
+		//	SoundEvent.createVariableRangeEvent(Identifier.fromNamespaceAndPath(porkin.MOD_ID, "burp")));
 
 		LOGGER.info("Hello Fabric world!");
 	}

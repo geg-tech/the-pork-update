@@ -25,7 +25,7 @@ public class ModBlocks {
             Block::new, //blockFactory
             BlockBehaviour.Properties.of() //BlockBehavior, tack on more properties under here
                     .sound(SoundType.SLIME_BLOCK)
-                    .friction(0),
+                    .friction(1),
             true
     );
 

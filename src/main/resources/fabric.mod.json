@@ -19,7 +19,8 @@
 			"geg.tech.porkin",
 			"geg.tech.Items.ModItemsInitialize",
 			"geg.tech.component.ComponentsInitialize",
-			"geg.tech.Effect.PorkinEffects"
+			"geg.tech.Effect.PorkinEffects",
+			"geg.tech.Blocks.ModBlocksInitialize"
 		],
 		"client": [
 			"geg.tech.client.PorkinClient"

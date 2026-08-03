@@ -2,6 +2,7 @@ package geg.tech.Items;
 // import geg.tech.Effect.PorkinEffects;
 // import geg.tech.Items.Tool.CleaverMaterial;
 import geg.tech.Effect.PorkinEffects;
+import geg.tech.Sound.CustomSounds;
 import geg.tech.porkin;
 
 import net.fabricmc.fabric.api.item.v1.FabricItem;
@@ -13,6 +14,7 @@ import net.minecraft.core.Registry;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.ClickEvent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
@@ -31,6 +33,8 @@ import net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Function;
+
+import static net.minecraft.core.Registry.registerForHolder;
 
 
 public class ModItems {
@@ -78,6 +82,7 @@ public class ModItems {
             .saturationModifier(15) //yummy!
             .build();
     //lard bottle mechanics
+
     public static final Consumable FAT_BOTTLE_CONSUMABLE_COMPONENT = Consumables.defaultDrink() //idk what the difference between drink and food is tbh
             // apply effects with ts
             .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.SLOWNESS, 20*20, 2), 1.0f))
@@ -90,7 +95,7 @@ public class ModItems {
             .consumeSeconds(3.0f)
             .sound(SoundEvents.HONEY_DRINK)
             .animation(ItemUseAnimation.DRINK)
-            .soundAfterConsume(SoundEvents.GENERIC_EXPLODE)
+            .soundAfterConsume(CustomSounds.BURP2)
             .build();
     public static final FoodProperties FAT_BOTTLE_COMPONENT = new FoodProperties.Builder()
             .nutrition(1)
